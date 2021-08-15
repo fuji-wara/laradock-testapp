@@ -20,6 +20,7 @@
                 <div class="collapse navbar-collapse" id="nav-bar">
                     <ul class="navbar-nav mr-auto"></ul>
                     <ul class="navbar-nav">
+                        <li class="nav-item">{!! link_to_route('tasks.create','タスクの新規作成',[],['class' => 'btn btn-dark']) !!}</li>
                     </ul>
                 </div>
             </nav>

@@ -39,50 +39,58 @@ class TasksController extends Controller
         $newTask = new Task;
         $newTask->content = $request->content;
         $newTask->save();
+
+        return redirect('/');
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     *タスクの詳細ページ
      */
     public function show($id)
     {
-        //
+        $task = Task::findOrFail($id);
+
+        return view('main_content.show',[
+            'task' => $task,
+        ]);
     }
 
     /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * 編集フォーム
      */
     public function edit($id)
     {
-        //
+        $task = Task::findOrFail($id);
+
+        return view('main_content.edit',[
+            'task' => $task,
+        ]);
     }
 
     /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * タスクの編集処理
      */
     public function update(Request $request, $id)
     {
-        //
+        $task = Task::findOrFail($id);
+
+        $task->content = $request->content;
+        $task->save();
+
+        return redirect('/');
+ 
     }
 
     /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * タスクを削除
      */
     public function destroy($id)
     {
-        //
+        $task = Task::findOrFail($id);
+
+        $task->delete();
+
+        return redirect('/');
+
     }
 }

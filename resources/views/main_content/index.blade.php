@@ -11,11 +11,12 @@
         <tbody>
             @foreach ($tasks as $task)
             <tr>
-                <th scope="row">{{ $task->id }}</th>
+                <th scope="row">{!! link_to_route('tasks.show',$task->id,['task' => $task->id ])!!}</th>
                     <td>{{ $task->content }}</td>
             </tr>
             @endforeach
         </tbody>
         </table>
     @endif
+    {!! link_to_route('tasks.create','新規タスクを追加',[],['class' => 'btn btn-dark'])!!}
 @endsection
