@@ -24,6 +24,8 @@
                     </ul>
                 </div>
             </nav>
+            {{-- エラーメッセージ --}}
+            @include('erroermessage.error')
         </header>
 
         <div class="container">

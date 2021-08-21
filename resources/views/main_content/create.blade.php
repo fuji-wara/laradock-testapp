@@ -1,5 +1,6 @@
 @extends('layouts.layout')
 @section('content')
+
     <h1>新規タスク追加ページ</h1>
     {!! Form::model($task,['route' => 'tasks.store']) !!}
 
