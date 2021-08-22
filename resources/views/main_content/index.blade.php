@@ -5,6 +5,7 @@
         <thead class="thead-dark">
             <tr>
             <th scope="col">#</th>
+            <th scope="col">title</th>
             <th scope="col">task</th>
             </tr>
         </thead>
@@ -12,6 +13,7 @@
             @foreach ($tasks as $task)
             <tr>
                 <th scope="row">{!! link_to_route('tasks.show',$task->id,['task' => $task->id ])!!}</th>
+                    <td>{{ $task->title }}</td>
                     <td>{{ $task->content }}</td>
             </tr>
             @endforeach

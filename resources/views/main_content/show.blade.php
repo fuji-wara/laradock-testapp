@@ -4,7 +4,7 @@
         <h5 class="card-header text-white bg-dark">id = {{ $task->id }} のタスク詳細</h5>
 
         <div class="card-body">
-            <h5 class="card-title">あとでタイトル入れる</h5>
+            <h5 class="card-title">{{ $task->title }}</h5>
             <p class="card-text">{{ $task->content }}</p>
             <br>
             <div class='text-right'>
